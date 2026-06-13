@@ -122,8 +122,7 @@ This pipeline implements the [GATK Best Practices](https://gatk.broadinstitute.o
 
 ## Author
 
-Janet | Master of Bioinformatics, University of Queensland
-Built as part of a bioinformatics portfolio for genomics and precision medicine research.
+Janet James
 
 ## License
 

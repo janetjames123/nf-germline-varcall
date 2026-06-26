@@ -2,7 +2,7 @@ process VARCALL {
     tag "$sample_id"
     publishDir "${params.outdir}/vcf", mode: 'copy'
 
-    conda 'bioconda::gatk4=4.4.0.0 bioconda::samtools'
+    container "janet111/varcall:4.4.0.0"
 
     input:
     tuple val(sample_id), path(bam), path(bai)

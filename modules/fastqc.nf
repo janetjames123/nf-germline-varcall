@@ -2,7 +2,7 @@ process FASTQC {
     tag "$sample_id"
     publishDir "${params.outdir}/fastqc", mode: 'copy'
 
-    conda 'bioconda::fastqc=0.12.1'
+    container "janet111/fastqc:0.12.1"
 
     input:
     tuple val(sample_id), path(reads)

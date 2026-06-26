@@ -2,7 +2,7 @@ process TRIM {
     tag "$sample_id"
     publishDir "${params.outdir}/trimmed", mode: 'copy'
 
-    conda 'bioconda::trimmomatic=0.39'
+    container "janet111/trim:0.39"
 
     input:
     tuple val(sample_id), path(reads)

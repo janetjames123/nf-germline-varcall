@@ -1,7 +1,7 @@
 process MULTIQC {
     publishDir "${params.outdir}/multiqc", mode: 'copy'
 
-    conda 'bioconda::multiqc=1.19'
+    container "janet111/multiqc:1.19"
 
     input:
     path qc_files

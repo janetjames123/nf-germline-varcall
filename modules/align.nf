@@ -2,7 +2,7 @@ process ALIGN {
     tag "$sample_id"
     publishDir "${params.outdir}/bam", mode: 'copy'
 
-    conda 'bioconda::bwa-mem2=2.2.1 bioconda::samtools=1.21'
+    container "janet111/align:2.2.1"
 
     input:
     tuple val(sample_id), path(reads)

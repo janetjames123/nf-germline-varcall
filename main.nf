@@ -10,6 +10,7 @@ include { TRIM }    from './modules/trim'
 include { ALIGN }   from './modules/align'
 include { VARCALL } from './modules/varcall'
 include { MULTIQC } from './modules/multiqc'
+include { VEP }     from './modules/vep'
 
 workflow {
     reads_ch = Channel.fromFilePairs(params.reads, checkIfExists: true)
@@ -20,5 +21,6 @@ workflow {
     VARCALL(ALIGN.out.bam, params.genome)
 
     fastqc_files = FASTQC.out.zip.map { sample_id, files -> files }.collect()
+    VEP(VARCALL.out.vcf)
     MULTIQC(fastqc_files)
 }
